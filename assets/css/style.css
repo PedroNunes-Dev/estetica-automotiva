@@ -1,0 +1,412 @@
+@import url('https://fonts.googleapis.com/css2?family=Aleo:wght@400;700&display=swap');
+
+:root
+{
+    --bg: #181818;
+    --text: #c7c7c7;
+    --a-hover: #3f3f3f;
+    --details: #fdca01;
+
+}
+
+/*RESET*/
+*
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body
+{
+    font-family: 'Aleo', serif;
+    color: #c7c7c7;
+    background: #181818;
+}
+
+ul
+{
+    margin: 0;
+    padding: 0;
+}
+
+li
+{
+    list-style: none;
+}
+
+a
+{
+    text-decoration: none;
+    color: #c7c7c7;
+    margin: 10px 0;
+}
+
+/*NAVIGATION*/
+#logo img
+{
+    width: 120px;
+}
+
+#header
+{
+    box-sizing: border-box;
+    height: 70px;
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+
+#menu
+{
+    display: flex;
+    gap: 1.2rem;
+}
+
+#menu a
+{
+    display: block;
+    font-size: 1.1rem;
+    line-height: 45px;
+    padding: 0 10px;
+    transition: 0.2s;
+}
+#menu a:hover
+{
+    background: #fdca01;
+    color: #3f3f3f;
+    border-radius: 3px;
+}
+
+/*MENU BUTTON*/
+#btn-mobile
+{
+    display: none;
+}
+
+@media (max-width: 700px) 
+{
+    #menu
+    {
+        display: block;
+        position: absolute;
+        width: 100%;
+        top: 70px;
+        right: 0;
+        background: #181818;
+        transition: 0.6s;
+        z-index: 10000;
+        height: 0;
+        visibility: hidden;
+        overflow: hidden;
+    }
+    
+    #nav.active #menu
+    {
+        height: calc(100vh - 70px);
+        visibility: visible;
+        overflow: auto;
+    }
+
+    #menu a
+    {
+        padding: 1rem 0;
+        margin: 0 1rem;
+        border-bottom: 1px solid #fdca01;
+        text-align: center;
+    }
+
+    #btn-mobile
+    {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        width: 45px;
+        height: 50px;
+        border-radius: 5px;
+        padding: 0.5rem 1rem;
+        font-size: 1rem;
+        border: none;
+        background: none;
+        cursor: pointer;
+        gap: 0.5rem;
+        overflow: hidden;
+    }
+
+    #btn-mobile span
+    {
+        position: absolute;
+        width: 30px;
+        height: 3px;
+        background: #fdca01;
+        border-radius: 4px;
+        transition: 0.3s;
+    }
+
+    #btn-mobile span:nth-child(1)
+    {
+        transform: translateY(-15px);
+        width: 25px;
+        left: 6px;
+    }
+
+    #nav.active span:nth-child(1)
+    {
+        width: 30px;
+        transform: translateY(0) rotate(45deg);
+        transition-delay: 0.125s;
+    }
+
+    #btn-mobile span:nth-child(2)
+    {
+        transform: translateY(15px);
+        width: 15px;
+        left: 6px;
+    }
+
+    #nav.active span:nth-child(2)
+    {
+        width: 30px;
+        transform: translateY(0) rotate(315deg);
+        transition-delay: 0.25s;
+    }
+
+    #nav.active span:nth-child(3)
+    {
+        transform: translateX(60px);
+    }
+}
+
+/* CUSTOM BODY */
+#services, #works, #certificate, #form-contact
+{
+    padding: 20px 0;
+}
+
+.btn
+{
+    border: 1px solid #fdca01;
+    color: #fdca01;
+}
+
+.btn:hover
+{
+    color: #3f3f3f;
+    background: #fdca01;
+}
+
+.titles
+{
+    text-align: center;
+    border-bottom: 2px solid #fdca01;
+    padding: 20px 0;
+    margin-bottom: 20px;
+}
+
+.line
+{
+    border-bottom: 2px solid #fdca01;
+    width: 215px;
+    margin-bottom: 10px;
+}
+
+#top
+{
+    
+    height: 100vh;
+    background-image: url(/src/img/bannertop.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0 40px;
+    color: #c7c7c7;
+}
+
+#top h2
+{
+    padding: 30px 0;
+    font-size: 2.2rem;
+    font-weight: 700;
+    text-align: center;
+}
+#top p
+{
+    text-align: center;
+    font-size: 1.2rem;
+}
+
+.card
+{
+    margin: 20px 0;
+    border: none;
+    background: #181818;
+}
+
+.card img
+{
+    border-radius: 5px;
+}
+
+/* FORM CONTACT */
+form
+{
+    border: 1px solid;
+    border-image: -webkit-linear-gradient(-40deg, #fdca01, #181818 80%);
+    border-image: -moz-linear-gradient(-40deg, #fdca01, #181818 80%);
+    border-image: linear-gradient(-40deg, #fdca01, #181818 80%);
+    border-image-slice: 1;
+    padding: 10px;
+    margin: 0 10px;
+}
+
+#form-img
+{
+    padding: 10px;
+}
+
+#form-img img
+{
+    width:100%;
+    border-radius: 5px;
+}
+
+.form-group input
+{
+    background-color: transparent;
+}
+.form-group textarea
+{
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid #fdca01;
+    border-radius: 0;
+}
+input[type="text"], input[type="email"], input[type="tel"], textarea
+{
+    
+    border: none;
+    border-bottom: 1px solid #fdca01;
+    border-radius: 0;
+    
+}
+
+footer
+{
+    border-top: 1px solid #3f3f3f;
+    padding: 20px;
+    text-align: center;
+}
+
+#footer-logo a img
+{
+    width: 120px;
+}
+
+#footer-links, #footer-hours
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: left;
+    padding-bottom: 10px;
+}
+
+#footer-links a
+{
+    padding: 5px 10px;
+    transition: .2s;
+}
+
+#footer-links a:hover
+{
+    color: #3f3f3f;
+    background: #fdca01;
+    border-radius: 5px;
+}
+
+#footer-links li
+{
+    list-style: circle;
+    margin: 10px 0;
+}
+#footer-social, #footer-logo
+{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    gap: 4rem;
+}
+
+#footer-social i
+{
+    font-size: 3rem;
+    color: #c7c7c7;
+    transition: .2s;
+}
+
+#footer-social i:hover
+{
+    transform: translateY(-10px);
+    color: #fdca01;
+}
+
+
+
+@media (min-width: 350px) and (max-width:480px) {
+
+    /* OWL-CAROUSEL CONFIG */
+    .owl-theme .owl-dots .owl-dot span
+    {
+    width: 8px;
+    height: 8px;
+    }
+
+    #top h2
+    {
+        font-size: 1.8rem;
+        text-align: center;
+    }
+
+    .btn
+    {
+        font-size: 1.4rem;
+    }
+
+    h1
+    {
+        font-size: 2.2rem;
+    }
+
+    h5
+    {
+        font-size: 1.6rem;
+    }
+
+    p
+    {
+        font-size: 1.2rem;
+    }
+
+    #footer-hours h5
+    {
+        font-size: 1.3rem;
+    }
+
+    #footer-hours p
+    {
+        font-size: 1rem;
+    }
+}
+

@@ -1,0 +1,46 @@
+@import url('https://fonts.googleapis.com/css2?family=Aleo:wght@400;700&display=swap');
+/*RESET*/
+*
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body
+{
+    font-family: 'Aleo', serif;
+    color: #c7c7c7;
+    background: #181818;
+}
+
+.btn
+{
+    border: 1px solid #fdca01;
+    color: #fdca01;
+}
+
+.btn:hover
+{
+    color: #3f3f3f;
+    background: #fdca01;
+}
+
+#email
+{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background: linear-gradient(165deg, #fdca01, #181818 80%);
+}
+
+#box
+{
+    text-align: center;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border-radius: 8px;
+}
